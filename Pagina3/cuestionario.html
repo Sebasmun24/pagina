@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcd.bootstrapcdn.con/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="footer.css">    
+           
+<title>Proyecto</title>
+</head>
+<body>
+<style>
+    body{
+    background-image: linear-gradient(to right, #E0E79C, #521945, #37371F, #937D64, #585B56);
+}
+</style>
+<div style="margin:24px;">
+  <nav class="navbar navbar-light" style="background-color: #553739;">
+  <div class="container">
+  <a class="navbar-brand" href="index.html">Inicio</a>
+  <ul class="nav navbar-nav">
+<li>
+  <a href="calculadora.html">Calculadora</a>
+</li>
+<li>
+<a href="calculadorafisica.html">Calculadora Fisica</a>
+</li>
+<li>
+<a href="perfil.html">Perfil</a>
+</li>
+<li>
+<a href="movies.html">Api Movies</a>
+</li>
+<li>
+<a href="cuestionario.html">Cuestionario</a>
+</li>
+<li>
+<a href="menu.html">Menu</a>
+</li>
+<li>
+<a href="formulario.html">Formulario</a>
+</li>
+<li>
+<a href="resultado.html">Resultado</a>
+</li>
+</li>
+</ul>
+</div>
+</nav>
+<style>
+    .quiz-container {
+        outline: #33FF34 1px;
+        background-color: #C4A69D;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 2px #3D348B;
+        width: 700px;
+        overflow: hidden;
+    }
+
+    .quiz-header {
+        padding: 5rem;
+    }
+li label {
+        cursor: pointer;
+    }
+    button {
+        background-color: #BEC5AD;
+        color: #6A33FF;
+        border: none;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        font-size: 15px;
+        font-family: verdana, Geneva;
+        padding: 15px;
+    }
+    button:hover {
+        background-color: #A4B494;
+    }
+    button:focus {
+        outline: none;
+        background-color: #325D46;
+    }
+    </style>
+
+<div class="container">
+  <div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+      <div class="image-container">
+        <center><img src="imagen.jpeg" alt="Imagen" id="question-image" style="width: 250px; height: 200px;"></center>
+      </div>
+      <h2 id="question">Question Text</h2>
+      <ul>
+        <li>
+          <input type="radio" name="answer"
+          id="a" class="answer">
+          <label for="a" id="a_text">Question</label>
+        </li>
+
+          <li>
+          <input type="radio" name="answer"
+          id="b" class="answer">
+          <label for="b" id="b_text">Question</label>
+        </li>
+
+             <li>
+          <input type="radio" name="answer"
+          id="c" class="answer">
+          <label for="c" id="c_text">Question</label>
+        </li>
+
+              <li>
+          <input type="radio" name="answer"
+          id="d" class="answer">
+          <label for="d" id="d_text">Question</label>
+        </li>
+      </ul>
+    </div>
+<button id="submit">Submit</button>
+  </div>
+</div>
+<script>
+  //
+  const quizData = [
+
+{
+  question: "1. ¿En qué año nació el Ford Mustang?",
+  image: "1.jpeg",
+  a:"1993",
+  b:"1969",
+  c:"1997",
+  d:"1999",
+  correct: "b",
+
+  },
+
+
+{
+  question: "2. ¿Cuántos Ford Mustang fueron vendidos el primer dia en que salió a la venta?",
+  image: "2.jpeg",
+  a:"900",
+  b:"20",
+  c:"11",
+  d:"1200",
+  correct: "b",
+
+  },
+
+{
+  question: "3. ¿En cuántas generaciónes está dividido en Ford Mustang?",
+  image: "3.jpeg",
+  a:"3",
+  b:"2",
+  c:"5",
+  d:"10",
+  correct: "c",
+
+  },
+
+  {
+  question: "4. ¿Cuándo es el aniversario del Ford Mustang?",
+  image: "4.jpg",
+  a:"18 de junio",
+  b:"20 de enero",
+  c:"12 de agusto",
+  d:"17 de abril",
+  correct: "d",
+  },
+
+    {
+  question: "5. ¿Qué clase de auto es el Ford Mustang?",
+  image: "5.jpeg",
+  a:"Exposicion",
+  b:"Deportivos",
+  c:"Lujo",
+  d:"Todas son correctas",
+  correct: "b",
+  },
+
+  {
+  question: "6. ¿Cómo se llama el hombre que inventó el Ford Mustang?",
+  image: "6.jpeg",
+  a:"Carrol Shelby",
+  b:"Richard Mustang",
+  c:"Carrol Mustang",
+  d:"Livenstieff Shelby Mustang",
+  correct: "a",
+  },
+
+    {
+  question: "7.  El Ford Mustang aceleraba de 0 a 100 km en ... segundos",
+  image: "7.jpeg",
+  a:"6",
+  b:"8.5",
+  c:"10",
+  d:"11.5",
+  correct: "c",
+  },
+
+    {
+  question: "8. ¿Cuál fue el nombre que le iban a poner al Ford Mustang?",
+  image: "8.jpg",
+  a:"Cougar",
+  b:"Ford Shelby Mustang",
+  c:"Ford Shelby",
+  d:"Ford 17",
+  correct: "a",
+  },
+
+    {
+  question: "9. ¿Cuál es el estilo del Ford Mustang?",
+  image: "9.jpeg",
+  a:"Tecnológico",
+  b:"Moderno",
+  c:"Clasico",
+  d:" Todas son correctas",
+  correct: "b",
+  },
+
+    {
+  question: "10. ¿Cómo se llamo el responsable de creador de Mustang 79?",
+  image: "10.jpg",
+  a:"Harrison cochrane",
+  b:"Lee lacocca",
+  c:"Henry ford",
+  d:"Roberto Gómez Bolaños",
+  correct: "b",
+  },
+
+      {
+  question: "11. ¿Existe el Ford Mustang del 2010?",
+  image: "11.jpeg",
+  a:"Si, con seguridad",
+  b:"No lo se",
+  c:"No",
+  d:"Fueron solo rumores",
+  correct: "a",
+  },
+
+
+    {
+  question: "12. En la escena del juego de ajedrez, ¿sobre qué pieza juega Ron?",
+  image: "12.jpeg",
+  a:"17 de junio de 1963",
+  b:"11 de mayo de 1963",
+  c:"17 de abril de 1964",
+  d:"11 de marzo de 1964",
+  correct: "c",
+  },
+
+   
+    {
+  question: "13. ¿Cómo se llamaba el Mustang en su etapa de prototipo?",
+  image: "13.jpeg",
+  a:"Allego ",
+  b:"Horserun",
+  c:"Mustango",
+  d:"Potro",
+  correct: "a",
+  },
+
+
+      {
+  question: "14. ¿Cómo se llamo el Modelo más completo del año 1978?",
+  image: "14.jpg",
+  a:"Machx one",
+  b:"De Luxe ",
+  c:"Ghia",
+  d:"King cobra",
+  correct: "d",
+  },
+
+
+      {
+  question: "15. ¿Cómo modelo era el Mustang de la 1era película de 60 segundos?",
+  image: "15.jpeg",
+  a:"Cobra",
+  b:"Shelby Gt",
+  c:"Mach one ",
+  d:"Ninguno",
+  correct: "c",
+  },
+
+      {
+  question: "16. ¿Cuánto corre el Shelby GT 500?",
+  image: "16.jpeg",
+  a:"120km/h",
+  b:"180km/h",
+  c:"221km/h",
+  d:"200km/h",
+  correct: "c",
+  },
+
+      {
+  question: "17. ¿Cuántos caballos tiene el Shelby GT 500",
+  image: "17.jpeg",
+  a:"300",
+  b:"400",
+  c:"900",
+  d:"700",
+  correct: "d",
+  },
+
+      {
+  question: "18. ¿Cuántas velocidades tiene el Shelby GT 500",
+  image: "18.jpeg",
+  a:"3",
+  b:"7",
+  c:"9",
+  d:"5",
+  correct: "b",
+  },
+
+      {
+  question: "19. ¿Cuál es el Mustang más poderoso?",
+  image: "19.jpg",
+  a:"Shelby Mustang Code Red",
+  b:"Ford sherlby GT500",
+  c:"Mustang 2020",
+  d:"Ninguno",
+  correct: "a",
+  },
+
+      {
+  question: "20. ¿Que motor trae el mustang?",
+  image: "20.jpeg",
+  a:"Motor v4",
+  b:"Motor v6",
+  c:"Motor v12",
+  d:"Motor v8",
+  correct: "b",
+  },
+
+  ];
+
+
+  const quiz = document.getElementById('quiz');
+  const answerEls = document.querySelectorAll('.answer');
+  const questionEl = document.getElementById('question');
+  const a_text = document.getElementById('a_text');
+  const b_text = document.getElementById('b_text');
+  const c_text = document.getElementById('c_text');
+  const d_text = document.getElementById('d_text');
+  const submitBtn = document.getElementById('submit');
+ 
+ let currentQuiz = 0;
+ let score = 0;
+ loadQuiz();
+
+ function loadQuiz(){
+  deselectAnswers();
+  const currentQuizData = quizData[currentQuiz];
+  questionEl.innerText = currentQuizData.question;
+  a_text.innerText = currentQuizData.a;
+  b_text.innerText = currentQuizData.b;
+  c_text.innerText = currentQuizData.c;
+  d_text.innerText = currentQuizData.d;
+
+const questionImage = document.getElementById("question-image");
+questionImage.src = currentQuizData.image;
+
+ }
+
+ function deselectAnswers(){
+ answerEls.forEach(answerEl => answerEl.checked = false); 
+ }
+
+ function getSelected(){
+  let answer;
+
+  answerEls.forEach(answerEl => {
+    if (answerEl.checked) {
+      answer = answerEl.id;
+    }
+  });
+
+  return answer;
+ }
+
+ submitBtn.addEventListener('click', () => {
+  const answer = getSelected();
+
+  if (answer){
+    if (answer === quizData[currentQuiz].correct){
+      score++;
+    }
+
+    currentQuiz++;
+    if(currentQuiz < quizData.length){
+      loadQuiz()
+    } else {
+      quiz.innerHTML = `
+      <h2>Contestaste ${score}/${quizData.length} de preguntas correctamente</h2>
+
+      <button onclick="location.reload()">Repetir</button>
+      `
+    }
+  }
+ })
+
+</script>
+
+
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>Contactame</h2>
+        <p>Si estas interesado en contactarme, puedes hacerlo a traves de las siguientes redes sociales:</p>
+        <div class="contact-links">
+          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+          <a href="http://www.linkedin.com/miperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="http://www.youtube.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  //Con lo siguiente hare que los links de las paginas se abran mediante javascript en un pagina nueva
+const socialnetworks = document.querySelectorAll('.contact-links a');
+socialnetworks.forEach(link =>{
+  link.addEventListener('click', e =>{
+    e.preventDefault();
+    window.open(link.href, '_blank');
+  });
+});
+</script>
+</footer>
+
+<script >
+       const socialnetworks = document.querySelectorAll('.contact-links a');
+    socialnetworks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            window.open(link.href, '_blank');
+        });
+    });
+    </script>
+</body>
+</html>
